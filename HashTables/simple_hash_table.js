@@ -11,6 +11,7 @@ class HashTable {
     return hash;
   }
 
+  //O(1)
   set(key,value){
    let address = this._hash(key)
    if(!this.data[address]){
@@ -21,6 +22,7 @@ class HashTable {
     return this.data;
   }
 
+  //O(1)
   get(key){
     let address =  this._hash(key);
     const currentBucket = this.data[address];
@@ -36,6 +38,7 @@ class HashTable {
     }
   }
 
+  //O(n)
   keys(){
     const keyArray = [];
     for(let i = 0 ; i < this.data.length ; i++){
@@ -54,6 +57,3 @@ myHashTable.set('apples', 54)
 myHashTable.get('grapess')
 myHashTable.keys()
 
-// myHashTable.get('grapes')
-// myHashTable.set('apples', 9)
-// myHashTable.get('apples')
