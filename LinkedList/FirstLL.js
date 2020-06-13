@@ -1,4 +1,5 @@
 //1-->10-->99-->5-->16
+//Note: Javascript doesnt have their own linkedLists. So we make one :)
 
 class LinkedList {
     constructor(value){
