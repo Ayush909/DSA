@@ -25,7 +25,7 @@ void printList(){
   }
   cout<<endl;
 }
-//traversing a the LL
+//traversing the LL
 Node* traverse(int index){
   int counter = 0;
   Node* temp = head;
@@ -50,9 +50,25 @@ void InsertAtNth(int index, int value){
 
 }
 
+//delete at nth position
+void deleteAtNth(int index){
+
+  if(index == 0 ){
+    Node* temp1 = head;
+    head = temp1->next;
+    delete temp1;
+    return;
+  }
+
+  Node* temp1 = traverse(index-1);
+  Node* temp2 = temp1->next;
+  temp1->next = temp2->next;
+  delete temp2;
+}
+
 int main(){
    
-    head = NULL;
+    head = NULL; //list is empty at this stage
     
     prepend(34);    
     prepend(24);    
@@ -61,6 +77,8 @@ int main(){
     prepend(5);
     printList(); 
     InsertAtNth(0, 99);  
+    printList();
+    deleteAtNth(0);
     printList(); 
 
     return 0 ;
