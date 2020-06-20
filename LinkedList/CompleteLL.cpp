@@ -8,6 +8,19 @@ struct Node {
 };
 struct Node* head; //global variable
 
+//insert at the end
+void append(int value){
+  Node* newNode = new Node();
+  newNode->data = value;
+  newNode->next = NULL;
+
+  Node* temp = head;
+  while(temp->next != NULL){
+    temp = temp->next;
+  }
+  temp->next = newNode;
+  
+}
 //insert at beginning
 void prepend(int value){
   Node* newNode = new Node();
@@ -69,16 +82,15 @@ void deleteAtNth(int index){
 int main(){
    
     head = NULL; //list is empty at this stage
-    
+
     prepend(34);    
     prepend(24);    
     prepend(13);    
     prepend(10);    
     prepend(5);
     printList(); 
-    InsertAtNth(0, 99);  
-    printList();
-    deleteAtNth(0);
+    append(45);  
+    append(35);  
     printList(); 
 
     return 0 ;
