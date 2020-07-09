@@ -1,13 +1,13 @@
-Method 1: Brute Force
-#include <iostream>    // to read and write data
-#include <cstdlib>
-#include <string>
-#include <limits> //to show min max of data types
-#include <vector>
-#include <sstream>
-#include <numeric>
-#include <ctime>
-#include <cmath>
+// Method 1: Brute Force
+// #include <iostream>    // to read and write data
+// #include <cstdlib>
+// #include <string>
+// #include <limits> //to show min max of data types
+// #include <vector>
+// #include <sstream>
+// #include <numeric>
+// #include <ctime>
+// #include <cmath>
 
 using namespace std;
 
@@ -42,17 +42,17 @@ int main()
 }
 
 
-Method 2 : Rotate one by one
+// Method 2 : Rotate one by one
 
-#include <iostream>    // to read and write data
-#include <cstdlib>
-#include <string>
-#include <limits> //to show min max of data types
-#include <vector>
-#include <sstream>
-#include <numeric>
-#include <ctime>
-#include <cmath>
+// #include <iostream>    // to read and write data
+// #include <cstdlib>
+// #include <string>
+// #include <limits> //to show min max of data types
+// #include <vector>
+// #include <sstream>
+// #include <numeric>
+// #include <ctime>
+// #include <cmath>
 
 using namespace std;
 
@@ -81,6 +81,72 @@ int main()
 
   return 0;
 }
+
+// Method 3 : Juggling algorithm : divide the array into set(no of sets = gcd of n,k) and shift in those array one by one
+// this algorithm will make space complexity = O(1)
+// Time complexity :  O(n)
+
+// #include <iostream>    // to read and write data
+// #include <cstdlib>
+// #include <string>
+// #include <limits> //to show min max of data types
+// #include <vector>
+// #include <sstream>
+// #include <numeric>
+// #include <ctime>
+// #include <cmath>
+
+using namespace std;
+
+//greatest common divisor function(uses recursion)
+int gcd(int a,int b){
+    if(b == 0){
+        return a;
+    }else{
+        return gcd(b,a%b);
+    }
+}
+
+int main()
+{
+  int d,n = 9;
+  int arr[n] = {1,2,3,4,5,6,7,8,9};
+
+  int k =3;
+  int temp;
+
+  int no_of_sets = gcd(n,k);
+
+  for(int i =0 ; i< no_of_sets ; i++){
+        temp = arr[i];
+    for(int j = i ; j < n ; j =(j+k)% n){
+
+         d = (j+k)% n;
+         //check for the last element in the cycle. if yes then arr[j] == temp;
+         if(d == i){
+            arr[j] = temp;
+            break;
+        }
+        //left shifting here
+        arr[j] = arr[d];
+    }
+  }
+  //print arr
+  for(int i =0 ; i<n ;i++){
+    cout<<arr[i]<<" ";
+  }
+
+  return 0;
+}
+
+
+
+
+
+
+
+
+
 
 
 
