@@ -77,15 +77,7 @@ int main()
 // this algorithm will make space complexity = O(1)
 // Time complexity :  O(n)
 
-// #include <iostream>    // to read and write data
-// #include <cstdlib>
-// #include <string>
-// #include <limits> //to show min max of data types
-// #include <vector>
-// #include <sstream>
-// #include <numeric>
-// #include <ctime>
-// #include <cmath>
+
 
 using namespace std;
 
