@@ -78,7 +78,7 @@ class LinkedList {
     delete(index){
       const leader = this.traverse(index-1);
       const unwantedNode = leader.next;
-      leader.next = real.next;
+      leader.next = unwantedNode.next;
       this.length--;
       return this.printList();
     }
