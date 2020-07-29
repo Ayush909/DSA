@@ -1,4 +1,5 @@
 // Search the given element in a matrix that is row wise and column wise sorted
+// O( r + c)
 #include <iostream>
 using namespace std;
 const int r = 4;
